@@ -7,10 +7,10 @@ import (
 	"net/http"
 	"os"
 	"os/signal"
-	//TODO: trocar para meu pacote no github
-	"github.com/rocketseat-education/semana-tech-go-react-server/internal/api"
-	"github.com/rocketseat-education/semana-tech-go-react-server/internal/store/pgstore"
- 
+	
+	"github.com/leandrorodrigues00/let-me-ask-go-react/go-server/internal/api"
+	"github.com/leandrorodrigues00/let-me-ask-go-react/go-server/internal/store/pgstore"
+
 	"github.com/jackc/pgx/v5/pgxpool"
 	"github.com/joho/godotenv"
 )
