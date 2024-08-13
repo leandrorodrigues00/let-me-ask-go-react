@@ -1,7 +1,16 @@
 import { ArrowRight } from "lucide-react";
 import amaLogo from "../assets/ama-logo.svg";
+import { useNavigate } from "react-router-dom";
 
 export function CreateRoom() {
+  const navigate = useNavigate();
+
+  function handleCreateRoom(data: FormData) {
+    const theme = data.get("theme")?.toString();
+
+    navigate(`/room/${theme}`);
+  }
+
   return (
     <main className="h-screen flex items-center justify-center px-4">
       <div className="max-w-[450px] flex flex-col gap-6">
@@ -12,7 +21,10 @@ export function CreateRoom() {
           important questions for the community.
         </p>
 
-        <form className="flex items-center gap-2 bg-zinc-900 p-2 rounded-xl border border-zinc-800 ring-orange-400 ring-offset-2 ring-offset-zinc-950 focus-within:ring-1">
+        <form
+          action={handleCreateRoom}
+          className="flex items-center gap-2 bg-zinc-900 p-2 rounded-xl border border-zinc-800 ring-orange-400 ring-offset-2 ring-offset-zinc-950 focus-within:ring-1"
+        >
           <input
             type="text"
             name="theme"
