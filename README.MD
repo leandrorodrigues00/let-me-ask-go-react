@@ -1,4 +1,4 @@
-# Letmeask - The Ultimate Q&A Platform for Engaging with Your Audience 🎤
+# Letmeask - The Ultimate Q&A Platform 🎤
 
 <br>
 
