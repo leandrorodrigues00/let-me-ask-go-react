@@ -23,7 +23,7 @@ Letmeask is perfect for content creators to create Q&A rooms with their audience
 
 Simply create a room, then share the code with your viewers. They can join the room to ask questions and upvote the best ones!
 
-Built with cutting-edge technologies like React, React Query, Vite, and Tailwind on the frontend, Letmeask ensures a smooth and responsive experience. On the backend, it's powered by GOlang and utilizes WebSockets to enhance real-time interaction performance.`
+Built with cutting-edge technologies like React, React Query, Vite, and Tailwind on the frontend, Letmeask ensures a smooth and responsive experience. On the backend, it's powered by GOlang and utilizes WebSockets to enhance real-time interaction performance.
 
 ## 🚀 Technologies
 
