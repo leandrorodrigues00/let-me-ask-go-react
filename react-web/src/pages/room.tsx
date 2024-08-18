@@ -1,9 +1,10 @@
 import { useParams } from "react-router-dom";
-import { ArrowRight, ArrowUp, Share2 } from "lucide-react";
+import { ArrowRight, Share2 } from "lucide-react";
 import { toast } from "sonner";
 
 import amaLogo from "../assets/ama-logo.svg";
-import { Message } from "../components/message";
+import { Messages } from "../components/messages";
+import { Suspense } from "react";
 
 export function Room() {
   const { roomId } = useParams();
@@ -58,10 +59,10 @@ export function Room() {
           <ArrowRight className="size-4" />
         </button>
       </form>
-      <ol className="list-decimal list-outside px-3 space-y-8">
-        <Message text="text message 1 " amountOfReactions={15} answered />
-        <Message text="text message 2" amountOfReactions={10} />
-      </ol>
+
+      <Suspense fallback={<p>Carregando...</p>}>
+        <Messages />
+      </Suspense>
     </div>
   );
 }
