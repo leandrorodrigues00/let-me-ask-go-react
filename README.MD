@@ -1,4 +1,4 @@
-# Lingo - The world's best way to learn a language 🌍
+# Letmeask - The Ultimate Q&A Platform for Engaging with Your Audience 🎤
 
 <br>
 
