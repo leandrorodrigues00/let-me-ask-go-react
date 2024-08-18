@@ -1,7 +1,8 @@
 import { useParams } from "react-router-dom";
+import { useSuspenseQuery } from "@tanstack/react-query";
+
 import { Message } from "./message";
 import { getRoomMessages } from "../http/get-room-messages";
-import { use } from "react";
 
 export function Messages() {
   const { roomId } = useParams();
@@ -10,14 +11,23 @@ export function Messages() {
     throw new Error("Messages components must be used within room page");
   }
 
-  const { messages } = use(getRoomMessages({ roomId }));
-
-  console.log(messages);
+  const { data } = useSuspenseQuery({
+    queryKey: ["messages", roomId],
+    queryFn: () => getRoomMessages({ roomId }),
+  });
 
   return (
     <ol className="list-decimal list-outside px-3 space-y-8">
-      <Message text="text message 1 " amountOfReactions={15} answered />
-      <Message text="text message 2" amountOfReactions={10} />
+      {data.messages.map((message) => {
+        return (
+          <Message
+            key={message.id}
+            text={message.text}
+            amountOfReactions={message.amountOfReactions}
+            answered={message.answered}
+          />
+        );
+      })}
     </ol>
   );
 }

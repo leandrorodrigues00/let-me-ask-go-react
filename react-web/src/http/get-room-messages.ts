@@ -11,17 +11,17 @@ export async function getRoomMessages({ roomId }: GetRoomMessagesRequest) {
     id: string;
     room_id: string;
     message: string;
-    reaction_count: string;
+    reaction_count: number;
     answered: boolean;
   }> = await response.json();
 
   return {
-    messages: data.map((message) => {
+    messages: data.map((item) => {
       return {
-        id: message.id,
-        Text: message.id,
-        amountOfReactions: message.reaction_count,
-        answered: message.answered,
+        id: item.id,
+        text: item.message,
+        amountOfReactions: item.reaction_count,
+        answered: item.answered,
       };
     }),
   };
