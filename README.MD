@@ -53,7 +53,7 @@ $ cd go-server
 
 **To run the back-end application, follow these steps:**
 
-To ensure the back-end application runs correctly, you need to configure your PostgreSQL database. If you have PostgreSQL installed on your machine, create a database named `wsrs` with the username `postgres` and password `123456789`. After creating the database, run the migrations to set up the schema.Alternatively, you can modify the database configuration in the .env file according to your setup.
+To ensure the back-end application runs correctly, you need to configure your PostgreSQL database. If you have PostgreSQL installed on your machine, create a database named `wsrs` with the username `postgres` and password `123456789`. After creating the database, run the migrations to set up the schema. Alternatively, you can modify the database configuration in the .env file according to your setup.
 
 For convenience, you can also use Docker to set up the database. The docker-compose.yml file is pre-configured for this purpose. Simply run: `docker compose up`
 
